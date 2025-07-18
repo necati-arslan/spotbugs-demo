@@ -1,17 +1,24 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+    // 🔸 UUF_UNUSED_FIELD: Field is never referenced
+    private String unusedField = "I am never used";
+
+    public static void main(String[] args) {
+
+        // 🔸 UC_USELESS_OBJECT: Object created but not used
+        new String("Hello, I am not used");
+
+        // 🔸 DLS_DEAD_LOCAL_STORE: Variable assigned but not used
+        int temp = 42;
+
+        Main obj = new Main();
+        obj.demoMethod();
+    }
+
+    private void demoMethod() {
+        // 🔸 URF_UNREAD_FIELD: Private field never read
+        String unreadField = "Set but never read";
     }
 }
