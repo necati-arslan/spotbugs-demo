@@ -24,7 +24,9 @@
                     <effort>Max</effort>
                     <threshold>Low</threshold>
                     <xmlOutput>true</xmlOutput>
-                    <failOnError>false</failOnError>
+                    <maxRank>20</maxRank>
+
+                    <failOnError>true</failOnError>
                 </configuration>
 
                 <executions>
@@ -32,6 +34,7 @@
                         <phase>verify</phase>
                         <goals>
                             <goal>spotbugs</goal>
+                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
