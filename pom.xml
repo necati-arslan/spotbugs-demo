@@ -20,9 +20,20 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>4.8.3.0</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                            <goal>spotbugs</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <effort>Max</effort>
                     <threshold>Low</threshold>
+                    <xmlOutput>true</xmlOutput>
+                    <outputDirectory>${project.build.directory}/spotbugs</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
